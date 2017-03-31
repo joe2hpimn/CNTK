@@ -1127,7 +1127,10 @@ void CPUSparseMatrix<ElemType>::ColumnwiseScaleAndWeightedAdd(ElemType alpha, co
         NOT_IMPLEMENTED;
 
     if (beta == 0)
+    {
         c.RequireSize(a.GetNumRows(), a.GetNumCols());
+        c.SetValue((ElemType)0);
+    }
     else
         c.VerifySize(a.GetNumRows(), a.GetNumCols()); // Can't resize if beta != 0
 

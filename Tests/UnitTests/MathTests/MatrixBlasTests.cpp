@@ -131,11 +131,9 @@ BOOST_FIXTURE_TEST_CASE(MatrixColumnwiseScaleAndWeightedAdd, RandomSeedFixture)
         SingleMatrix singleMatrixAcsc = singleMatrixA.DeepClone();
         singleMatrixAcsc.SwitchToMatrixType(SPARSE, matrixFormatSparseCSC, true);
 
-        SingleMatrix singleMatrixC = SingleMatrix::RandomUniform(n, 1, deviceId, 0, 1, IncrementCounter());
-
-        SingleMatrix singleMatrixCexpected = singleMatrixC.DeepClone();
-        SingleMatrix singleMatrixCdense = singleMatrixC.DeepClone();
-        SingleMatrix singleMatrixCsparse = singleMatrixC.DeepClone();
+        SingleMatrix singleMatrixCexpected = SingleMatrix::RandomUniform(m, n, deviceId, 0, 1, IncrementCounter());
+        SingleMatrix singleMatrixCdense = singleMatrixCexpected.DeepClone();
+        SingleMatrix singleMatrixCsparse = singleMatrixCexpected.DeepClone();
 
         SingleMatrix singleMatrixBdiag(n, n, deviceId);
         singleMatrixBdiag.SetValue(0);
