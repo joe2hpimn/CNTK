@@ -146,8 +146,8 @@ BOOST_FIXTURE_TEST_CASE(MatrixColumnwiseScaleAndWeightedAdd, RandomSeedFixture)
             SingleMatrix::ColumnwiseScaleAndWeightedAdd(1, singleMatrixA, singleMatrixB, beta, singleMatrixCdense);
             SingleMatrix::ColumnwiseScaleAndWeightedAdd(1, singleMatrixAcsc, singleMatrixB, beta, singleMatrixCsparse);
 
-            BOOST_CHECK(singleMatrixCexpected.IsEqualTo(singleMatrixCdense, c_epsilonFloatE5));
-            BOOST_CHECK(singleMatrixCexpected.IsEqualTo(singleMatrixCsparse, c_epsilonFloatE5));
+            BOOST_CHECK(singleMatrixCexpected.IsEqualTo(singleMatrixCdense, c_epsilonFloatE4));
+            BOOST_CHECK(singleMatrixCexpected.IsEqualTo(singleMatrixCsparse, c_epsilonFloatE4));
         }
     }
 }
